@@ -1,0 +1,14 @@
+<div class="  d-flex flex-column align-items-center">
+    <p class="mt-5">fournisseur-component works!</p>
+    <div class="container border border-danger" *ngIf="this.hide">
+        <div class="row p-4"> IdFournisseur : {{this.FisrtFournissuer.idFournisseur}}</div>
+        <div class="row p-4">code fournisseur : {{this.FisrtFournissuer.code}}</div>
+        <div class="row p-4">libelle fournisseur : {{this.FisrtFournissuer.libelle}}</div>
+
+    </div>
+    <div class="text-center mt-4">
+
+        <button type="button" (click)="ChangeStatus()" class="btn btn-outline-danger">Cacher Information
+            fournisseur</button>
+    </div>
+</div>

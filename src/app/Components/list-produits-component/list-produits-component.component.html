@@ -1,0 +1,53 @@
+<mat-toolbar color="primary">
+
+    <span class="example-spacer"></span>
+    <button mat-raised-button (click)="OpenAddProduct()">
+        Ajouter un produit
+        <mat-icon>add</mat-icon>
+    </button>
+</mat-toolbar>
+
+
+
+
+
+
+
+<div class="container-fluid">
+
+
+    <input class="form-control  mt-3 mb-3" type="search" placeholder="Search" aria-label="Search"
+        (input)="SearchProduct(serachTerm)" [(ngModel)]="serachTerm">
+    <ol>
+        <li *ngFor="let Product of listProduits">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <ul>
+                        <div class="d-flex">
+                            <li [ngStyle]="
+                  isNotEqualTo50(Product) ? { color: couleur } : { color: '' }
+                ">
+                                Produit: {{ Product.libelle }}
+                            </li>
+                            <button type="button" class="Tva_style mr-3" [disabled]="Product.tauxTVA == 0.02"
+                                (click)="modifierTVA(Product.idProduit)">
+                                Ajuster TVA
+                            </button>
+                            <span class="text-danger" *ngIf="produitsModifies.get(Product.idProduit)">TVA
+                                modifiée</span>
+                        </div>
+                        <li [ngClass]="{ family_Style: isNotEqualTo50(Product) }">
+                            Code: {{ Product.code }}
+                        </li>
+                        <li [style.font-size]="isNotEqualTo50(Product) ? '20px' : 'normal'">
+                            Prix Unitaire: {{ Product.prixUnitaire }}
+                        </li>
+                        <li [style.font-size]="isNotEqualTo50(Product) ? '20px' : 'normal'">
+                            Taux Tva: {{ Product.tauxTVA }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+    </ol>
+</div>

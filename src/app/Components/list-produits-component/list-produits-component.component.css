@@ -1,0 +1,11 @@
+.Tva_style{
+  border-radius: 4px;
+
+}
+.family_Style{
+  font-style:italic ;
+  
+}
+.bg-image{
+  background-image: url('src\assets\images\product.jpeg');
+}

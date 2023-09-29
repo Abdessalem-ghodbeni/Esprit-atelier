@@ -1,0 +1,17 @@
+<button mat-fab extended color="primary">
+    Show More
+    <mat-icon>arrow_right_alt</mat-icon>
+</button>
+<div class="mt-5" *ngFor="let x of Fournisseur">
+
+
+    <div class="container   mb-4">
+
+        <fieldset class="border p-2" *ngIf="x.idFournisseur>100" [ngClass]="{'isHp':isLibelleHp(x)}"
+            (dblclick)="RemoveFournisseur(x.idFournisseur)">
+            <legend class="float-none w-auto p-2">IdFournisseur : {{ x.idFournisseur}}</legend>
+            <div class="row p-3" [ngClass]="{'font-weight-bold': getWeight(x.code)}">CodeFournisseur : {{ x.code}}</div>
+            <div class="row p-3">LibelleFournisseur : {{ x.libelle}}</div>
+        </fieldset>
+    </div>
+</div>
