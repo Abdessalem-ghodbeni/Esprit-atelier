@@ -45,6 +45,10 @@
                         <li [style.font-size]="isNotEqualTo50(Product) ? '20px' : 'normal'">
                             Taux Tva: {{ Product.tauxTVA }}
                         </li>
+                        <li><button (click)="calculateNbProducts(Product.libelle)">Calculer</button>
+                            <span *ngIf="Product.count !== undefined">Nombre de produits : {{ Product.count }}</span>
+                        </li>
+
                     </ul>
                 </div>
             </div>
